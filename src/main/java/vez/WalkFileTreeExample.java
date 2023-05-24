@@ -4,18 +4,26 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.stream.Stream;
 
 public class WalkFileTreeExample {
 
-  private static final String SRC_DIR = "C:\\Users\\vez\\Pictures\\GooglePhotos\\2023";
-  private static final String DEST_DIR = "D:\\photos";
   private static final Random rnd = new Random();
   private static long amount = 0L;
 
   public static void main(String[] args) {
+
+    if (args.length != 2) {
+      throw new IllegalArgumentException("program argument expected: sourceDir destDir but got: " + args.length + " params");
+    }
+    final String SRC_DIR = args[0];
+    final String DEST_DIR = args[1];
+    System.out.printf("SRC_DIR: %s\n", SRC_DIR);
+    System.out.printf("DEST_DIR: %s\n", DEST_DIR);
 
     amount = 0L;
     Path destDir = Paths.get(DEST_DIR);
