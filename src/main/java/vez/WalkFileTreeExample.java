@@ -10,8 +10,8 @@ import java.util.stream.Stream;
 
 public class WalkFileTreeExample {
 
-  private static final String SRC_DIR = "E:\\Users\\vez\\GoogleDrive\\Photos";
-  private static final String DEST_DIR = "H:\\photos";
+  private static final String SRC_DIR = "C:\\Users\\vez\\Pictures\\GooglePhotos\\2023";
+  private static final String DEST_DIR = "D:\\photos";
   private static final Random rnd = new Random();
   private static long amount = 0L;
 
