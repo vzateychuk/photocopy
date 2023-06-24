@@ -3,10 +3,22 @@ plugins {
 }
 
 group 'ru.vez'
-version '1.0-SNAPSHOT'
+version '1.0.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}
 
 repositories {
     mavenCentral()
+}
+
+compileJava {
+    options.compilerArgs.addAll(
+            ['--enable-preview']
+    )
 }
 
 dependencies {
