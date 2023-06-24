@@ -25,6 +25,9 @@ public class WalkFileTreeExample {
     System.out.printf("SRC_DIR: %s\n", SRC_DIR);
     System.out.printf("DEST_DIR: %s\n", DEST_DIR);
 
+    long start = System.currentTimeMillis();
+    System.out.println("Entering photo-copy application");
+
     amount = 0L;
     Path destDir = Paths.get(DEST_DIR);
     try (Stream<Path> paths = Files.walk(Paths.get(SRC_DIR))) {
@@ -34,7 +37,9 @@ public class WalkFileTreeExample {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    System.out.println("Processed: " + amount);
+
+    long duration = System.currentTimeMillis() - start;
+    System.out.println("Processed: " + amount + ", mills: " + duration);
   }
 
   private static void copyFileToFolder(Path filePath, Path destDir) {
